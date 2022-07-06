@@ -17,3 +17,33 @@ var hoursOfDay =Array.from(new Array(9)).map((v, i) => {
 
 var textDescrip = $(this).siblings(".description").val();
 var time = $(this).parent().Attr("id");
+
+hoursOfTheDay.forEach((hr) => {
+  var textArea = document.querySelectorAll("textarea");
+    textArea.addClass(color(hr));
+
+  eventForm.submit((e) => {
+    e.preventDefault();
+
+    //local storage
+    localStorage.setItem(time, textDes);
+  });
+});
+
+
+// loads the event
+function loadEvents(){
+  if (storedEvents) {
+    for(var i = 0; i < 9; i++){
+      Events.hour = storedEvents;
+    }
+  }
+  if(!storedEvents){
+    for(var i = 0; i < 9; i++){
+      Events[i] = "";
+    }
+  }
+};
+
+
+loadEvents();
