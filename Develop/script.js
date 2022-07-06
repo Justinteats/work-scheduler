@@ -1,8 +1,8 @@
-const moment = require("moment");
+
 
 //date in header
 var currentDay = $("#currentDay");
-currentDate = moment(currentData).format("dddd, MMMM Do");
+currentDate = moment(currentDate).format("dddd, MMMM Do");
 
 var header = $("header");
 header.append(currentDate);
